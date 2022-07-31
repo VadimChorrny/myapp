@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import TodoItem from './TodoItems/TodoItem';
-import Home from './Blog/Home';
+import FindUserByUsername from './Users/FindUserByUsername';
 
 function App() {
-  return <Home />;
+  return <FindUserByUsername />;
 }
 
 export default App;

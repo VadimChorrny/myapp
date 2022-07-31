@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(`${url}/3`)
+      .get(url)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -24,7 +24,7 @@ export default function Home() {
     axios
       .post(`${url}`, {
         title: 'Hello, I am Vadym!',
-        body: 'Something text who',
+        body: 'Something text who1',
       })
       .then((res) => {
         setData(res.data);
@@ -47,6 +47,12 @@ export default function Home() {
       <h3>{data.title}</h3>
       <h4>{data.body}</h4>
       <button onClick={createPost}>Create</button>
+      {/* <h1>Hello</h1>
+      <ul>
+        {data.map((res) => (
+          <li>{res.title}</li>
+        ))}
+        </ul> */}
     </div>
   );
 }
