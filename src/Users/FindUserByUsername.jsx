@@ -3,6 +3,7 @@ import { useState } from 'react';
 import UserInfo from './UserInfo';
 
 export default function FindUserByUsername() {
+
   const [currUsername, setCurrUsername] = useState();
   const [isUserSended, setIsUserSended] = useState(false);
 
