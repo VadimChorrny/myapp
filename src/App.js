@@ -8,14 +8,18 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      display: true,
+      isShow: true,
     };
 
     this.delete = this.delete.bind(this); // тут ми наказуємо, що до функції будемо звертатись через this
   }
 
   delete() {
-    this.setState({ display: false });
+    if (this.state.isShow) {
+      this.setState({ isShow: false });
+    } else {
+      this.setState({ isShow: true });
+    }
   }
 
   shouldComponentUpdate() {
@@ -25,7 +29,7 @@ class App extends React.Component {
 
   render() {
     let tmp;
-    if (this.state.display) {
+    if (this.state.isShow) {
       tmp = <Temp />;
     }
 
@@ -34,6 +38,7 @@ class App extends React.Component {
         {tmp}
         <button onClick={this.delete}>Delete the component</button>
       </div>
+      // <Example number='777' />
     );
   }
 }
